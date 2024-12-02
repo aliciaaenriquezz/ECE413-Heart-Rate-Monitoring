@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Heart Rate Monitoring</title>
+    <link href="stylesheets/signup_stylesheet.css" rel="stylesheet">
+    <script src="javascripts/register.js"></script>
+</head>
+<body>
+    <div class="main-container">
+        <div id="image-box"> 
+            <img src="images/loginimage.jpeg" alt="Login Image">
+        </div>
+        <h1 id = center-name>Heart Medical <br>Cardiovascular Health Center</h1>
+        <h1>Patient Portal Sign Up</h1>
+
+        <div class="login-container">
+            <form action="login_process.php" method="POST">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName"></input>
+
+                <label for="email">Email</label>
+                <input type="text" id="email"></input>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password"></input>
+
+                <label for="passwordConfirm">Confirm Password</label>
+                <input type="password" id="passwordConfirm"></input>
+                <div id="formErrors"></div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
