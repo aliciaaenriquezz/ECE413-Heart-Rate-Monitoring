@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>Heart Rate Monitoring</title>
-    <link href="stylesheets/signup_stylesheet.css" rel="stylesheet">
-    <script src="javascripts/register.js"></script>
+    <link href="stylesheets/signup.css" rel="stylesheet">
+    <script src="javascripts/signup.js"></script>
 </head>
 <body>
     <div class="main-container">
@@ -16,7 +16,6 @@
         <h1>Patient Portal Sign Up</h1>
 
         <div class="login-container">
-            <form action="login_process.php" method="POST">
                 <label for="fullName">Full Name</label>
                 <input type="text" id="fullName"></input>
 
@@ -29,9 +28,8 @@
                 <label for="passwordConfirm">Confirm Password</label>
                 <input type="password" id="passwordConfirm"></input>
                 <div id="formErrors"></div>
-
-                <button type="submit">Submit</button>
-            </form>
+                
+                <input id="submit" type="submit"></input>
         </div>
     </div>
 </body>
