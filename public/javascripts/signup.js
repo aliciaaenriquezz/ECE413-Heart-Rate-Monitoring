@@ -37,6 +37,9 @@ function checkErrors() {
     isError = true;
     email.style.borderColor = "red";
     email.style.borderWidth = "2px";
+
+///ELSE-IF CHECK DATABASE IF USER ALREADY EXISTS
+    
   } else {
     email.style.borderColor = "rgb(170, 170, 170)";
     email.style.borderWidth = "1px";
@@ -91,6 +94,9 @@ function checkErrors() {
     showErrors();
   } else {
     document.getElementById("formErrors").style.display = "none";
+///ADD USER TO DATABASE
+///GOTO USER'S MAIN MENU
+    window.location.href = 'mainmenu.html';
   }
 }
 
