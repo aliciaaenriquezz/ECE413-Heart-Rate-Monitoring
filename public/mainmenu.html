@@ -4,11 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heart Rate Monitoring</title>
-    <link href="stylesheets/mainMenu.css" rel="stylesheet">
+    <link href="stylesheets/mainmenu.css" rel="stylesheet">
     <script src="javascripts/mainMenu.js"></script>
 </head>
 
 <body>
-    <h1>Main Menu</h1>
+    <header>
+        <h1>Heart Medical Cardiovascular Health Center</h1>
+        <div class="profile-name">Welcome, [Profile Name]!</div>   <!--TODO, GET FROM SIGNUP INFO -->
+    </header>
+    <h2>Main Menu</h2>
+    <div class="container">
+        <div>
+            <div class="section-title">Health Metrics</div>
+            <div class="card" onclick="navigateTo('weeklySummary')">
+                <h3>Weekly Summary View</h3>
+            </div>
+            <div class="card" onclick="navigateTo('dailyDetail')">
+                <h3>Detailed Daily View</h3>
+            </div>
+        </div>
+        <div>
+            <div class="section-title">Account Options</div>
+            <div class="card" onclick="navigateTo('manageDevices')">
+                <h3>Add/Remove Devices</h3>
+            </div>
+            <div class="card" onclick="navigateTo('updateAccount')">
+                <h3>Update Account</h3>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
