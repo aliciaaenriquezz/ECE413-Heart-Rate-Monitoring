@@ -1,6 +1,6 @@
 body {
     font-family: serif, sans-serif;
-    background-color: #ebd5d6;
+    background-color: #f4f4f9;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -8,7 +8,7 @@ body {
 header {
     display: flex;
     justify-content: space-between;
-    padding: 20px 40px;
+    padding: 20px 30px;
     background-color: #7598bd;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

@@ -5,22 +5,49 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: serif, sans-serif;
     background-color: #f4f4f9;
     color: #333;
     display: flex;
+    text-align: center;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Change from center to prevent overlap with the fixed header */
     min-height: 100vh;
+    padding-top: 100px; /* Add padding to avoid content being hidden under the header */
+}
+
+header {
+    position: fixed; /* Make the header fixed */
+    top: 0; /* Anchor it to the top */
+    width: 100%; /* Make it stretch across the screen */
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+    background-color: #7598bd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensures the header is always on top */
+}
+
+header h1 {
+    font-size: 18px; /* Increase the size to make it more prominent */
+    color: #000000; /* White text for better contrast */
+    font-weight: bold; 
+}
+
+.profile-name {
+    text-align: left;
+    font-size: 16px;
+    color: #000000; /* Softer color for the welcome message */
 }
 
 .container {
+    margin-top: 140px;
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     max-width: 500px;
     width: 100%;
-    padding: 20px;
+    padding: 70px;
 }
 
 .header {

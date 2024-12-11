@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: serif, sans-serif;
     background-color: #f4f4f9;
     color: #333;
     display: flex;
@@ -15,6 +15,7 @@ body {
 }
 
 .container {
+    margin-top: 80px;
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -27,7 +28,23 @@ body {
     text-align: center;
     margin-bottom: 20px;
 }
+header {
+    position: fixed; /* Make the header fixed */
+    top: 0; /* Anchor it to the top */
+    width: 100%; /* Make it stretch across the screen */
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+    background-color: #7598bd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensures the header is always on top */
+}
 
+header h1 {
+    font-size: 18px; /* Increase the size to make it more prominent */
+    color: #000000; /* White text for better contrast */
+    font-weight: bold; 
+}
 .header h1 {
     font-size: 24px;
     color: #555;
@@ -63,7 +80,7 @@ input[readonly] {
 button {
     width: 100%;
     padding: 10px 20px;
-    background-color: #007BFF;
+    background-color: #7598bd;
     color: white;
     border: none;
     border-radius: 6px;
