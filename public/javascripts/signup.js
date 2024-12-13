@@ -1,3 +1,4 @@
+//REFERENCES: ECE 413 Lab 3 and MongoDB_Activities_Source_Code
 
 var errors = [];
 
@@ -12,6 +13,88 @@ function loadedHandler() {
   submitButton.addEventListener("click", checkErrors);
 }
 
+
+/// ------ DATA BASE FUNCTIONS ------ ///
+
+//Creates a new user
+function createUser(){
+
+  if ($('#fullname').val() === "") {
+    window.alert("invalid name!");
+    return;
+  }
+  if ($('#email').val() === "") {
+    window.alert("invalid email!");
+    return;
+  }
+  if ($('#password').val() === "") {
+    window.alert("invalid password!");
+    return;
+  }
+
+  let txdata = {
+      name: $('#fullName').val(),
+      email: $('#email').val().toUpperCase(), 
+      password: $('#password').val()
+  };
+  
+  $.ajax({
+      url: '/users/create',
+      method: 'POST',
+      contentType: 'application/json',
+      data: JSON.stringify(txdata),
+      dataType: 'json'
+  })
+  .done(function (data, textStatus, jqXHR) {
+
+  })
+  .fail(function (data, textStatus, jqXHR) {
+    window.alert("FAILURE javascripts/signup.js/createUser()");
+  });
+}
+
+//Checks for any duplicate emails during the "sign up" process
+function isDuplicateEmails(){
+   // data validation
+  if ($('#email').val() === "") {
+    window.alert("invalid email!");
+    return;
+  }
+
+  let txdata = {
+    email: $('#email').val().toUpperCase()
+  };
+
+  $.ajax({
+    url: '/users/search',
+    method: 'POST',
+    contentType: 'application/json',
+    data: JSON.stringify(txdata),
+    dataType: 'json'
+  })
+
+  .done(function (data, textStatus, jqXHR) {
+    if(data.length > 0){
+      window.alert("This email is already in use on this site.");
+      isError = true
+      email.style.borderColor = "red";
+      email.style.borderWidth = "2px";
+    } else {
+      email.style.borderColor = "rgb(170, 170, 170)";
+      email.style.borderWidth = "1px";
+      //Add User to Database
+      createUser();
+      //Goto mainmenu.html
+      window.location.href = 'mainmenu.html';
+    }
+ })
+ .fail(function (data, textStatus, jqXHR) {
+     window.alert("FAILURE javascripts/signup.js/isDuplicateEmails()");
+ });
+}
+
+
+/// ------ SIGN UP FUNCTIONS ------ ///
 function checkErrors() {
   errors = []; //reset errors array
   const hasLower = /[a-z]/;
@@ -37,13 +120,11 @@ function checkErrors() {
     isError = true;
     email.style.borderColor = "red";
     email.style.borderWidth = "2px";
-
-///ELSE-IF CHECK DATABASE IF USER ALREADY EXISTS
-    
-  } else {
+  }else {
     email.style.borderColor = "rgb(170, 170, 170)";
     email.style.borderWidth = "1px";
   }
+  
   //PASSWORD ERRORS
   if (password.value.length < 10 || password.value.length > 20) {
     errors.push("Password must be between 10 and 20 characters.");
@@ -94,9 +175,7 @@ function checkErrors() {
     showErrors();
   } else {
     document.getElementById("formErrors").style.display = "none";
-///ADD USER TO DATABASE
-///GOTO USER'S MAIN MENU
-    window.location.href = 'mainmenu.html';
+    isDuplicateEmails();
   }
 }
 
