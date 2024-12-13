@@ -98,3 +98,30 @@ button:hover {
     font-size: 14px;
     margin-top: 5px;
 }
+.back-button {
+    display: inline-block;
+    margin: 20px;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+    background-color: #7598bd; /* Blue color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.back-button:hover {
+    transform: translateY(-10px); /* Move up */
+    background-color: #7598bd; /* Darker blue on hover */
+}
+
+.back-button:active {
+    transform: translateY(0); /* Return to original position when clicked */
+}
+
+.back-button:focus {
+    outline: none; /* Remove focus outline */
+}
