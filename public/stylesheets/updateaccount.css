@@ -10,24 +10,11 @@ body {
     color: #333;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Change from center to prevent overlap with the fixed header */
     min-height: 100vh;
+    padding-top: 100px; /* Add padding to avoid content being hidden under the header */
 }
 
-.container {
-    margin-top: 80px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
-    padding: 20px;
-}
-
-.header {
-    text-align: center;
-    margin-bottom: 20px;
-}
 header {
     position: fixed; /* Make the header fixed */
     top: 0; /* Anchor it to the top */
@@ -45,10 +32,55 @@ header h1 {
     color: #000000; /* White text for better contrast */
     font-weight: bold; 
 }
+
+.profile-name {
+    text-align: left;
+    font-size: 16px;
+    color: #000000; /* Softer color for the welcome message */
+}
+
+.container {
+    margin-top: 140px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    padding: 70px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .header h1 {
     font-size: 24px;
     color: #555;
 }
+
+.daily-stats {
+    margin-top: 20px;
+}
+
+.day {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.day:nth-child(even) {
+    background-color: #e9e9e9;
+}
+
+.day span {
+    font-weight: bold;
+    color: #555;
+}
+
 
 .form-group {
     margin-bottom: 15px;
@@ -78,10 +110,8 @@ input[readonly] {
 }
 
 button {
-    width: 100%;
-    padding: 10px 20px;
     background-color: #7598bd;
-    color: white;
+    color: rgb(0, 0, 0);
     border: none;
     border-radius: 6px;
     font-size: 16px;
@@ -89,8 +119,12 @@ button {
     transition: background-color 0.3s;
 }
 
+.update {
+    width: 100%;
+    padding: 10px 20px;
+}
 button:hover {
-    background-color: #0056b3;
+    background-color: #597492;
 }
 
 .error-message {
