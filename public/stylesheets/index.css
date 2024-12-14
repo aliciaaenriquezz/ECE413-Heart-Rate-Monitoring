@@ -1,0 +1,15 @@
+body {
+    font-family: Arial, sans-serif;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    background-color: #142144;
+    color: #fff;
+}
+
+.link{
+    color: #fff
+    
+}
+
