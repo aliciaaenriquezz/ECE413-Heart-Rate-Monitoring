@@ -1,18 +1,26 @@
 var express = require('express');
 var router = express.Router();
 var User = require("../models/user");
+const jwt = require("jwt-simple");
+const bcrypt = require("bcryptjs");
+const fs = require('fs');
+
+
+const secret = fs.readFileSync(__dirname + '/../keys/jwtkey').toString();
 
 // CRUD implementation
 
 router.post("/create", function (req, res) {
+    const passwordHash = bcrypt.hashSync(req.body.password, 10);
+    
     const newUser = new User({
         name: req.body.name,
         email: req.body.email,
-        password: req.body.password
+        password: passwordHash
     });
     newUser.save(function (err, user) {
         if (err) {
-            res.status(400).send(err);
+            res.status(400).send({success: false, err: err});
         }
         else {
             let msgStr = `User (${req.body.name}) info has been saved.`;
@@ -101,5 +109,40 @@ router.post("/read", function (req, res) {
         }
     });
 });
+
+router.post("/logIn", function (req, res) {
+
+    if (!req.body.email || !req.body.password) {
+        res.status(401).json({ error: "Missing email and/or password" });
+        return;
+    }
+    // Get user from the database
+    User.findOne({ email: req.body.email }, function (err, user) {
+        if (err) {
+            res.status(400).send(err);
+        }
+        else if (!user) {
+            // Username not in the database
+            res.status(401).json({ error: "Login failure!!" });
+        }
+        else {
+            if (bcrypt.compareSync(req.body.password, user.password)) {
+                const token = jwt.encode({ email: user.email }, secret);
+                //update user's last access time
+                user.lastAccess = new Date();
+                user.save((err, user) => {
+                    console.log("User's LastAccess has been update.");
+                });
+                // Send back a token that contains the user's username
+                res.status(201).json({ success: true, token: token, msg: "Login success" });
+            }
+            else {
+                res.status(401).json({ success: false, msg: "Email or password invalid." });
+            }
+        }
+    });
+    
+ });
+
 
 module.exports = router;
