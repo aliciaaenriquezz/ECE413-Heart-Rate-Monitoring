@@ -1,5 +1,8 @@
 
 var errors = [];
+
+document.addEventListener("DOMContentLoaded", loadedHandler);
+
 document.addEventListener('DOMContentLoaded', () => {
   const backButton = document.getElementById('back-button');
 
@@ -9,8 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", loadedHandler);
-
 function loadedHandler() {
   var fullName = document.getElementById("fullName");
   var email = document.getElementById("email");
@@ -18,6 +19,36 @@ function loadedHandler() {
   var passwordConfirm = document.getElementById("passwordConfirm");
   var submitButton = document.getElementById("submit");
   submitButton.addEventListener("click", checkErrors);
+}
+
+
+function updateProfile(){
+
+  let x = $('#fullName').val().toLowerCase();
+  let capName = x.split(' ').map(word =>
+    word.charAt(0).toUpperCase() + word.slice(1)
+  ).join(' ');
+
+  let txdata = {
+    name: capName,
+    email: $('#email').val(), 
+    password: $('#password').val()
+  };
+
+  $.ajax({
+    url: '/users/update',
+    method: 'POST',
+    contentType: 'application/json',
+    data: JSON.stringify(txdata),
+    dataType: 'json'
+})
+.done(function (data, textStatus, jqXHR) {
+  window.alert("Information has been successfully updated");
+  //window.location.href = 'mainmenu.html';
+})
+.fail(function (jqXHR, textStatus, errorThrown) {
+  window.alert("Failure /javascripts/updateaccount.js/updateProfile()");
+});
 }
 
 function checkErrors() {
@@ -38,6 +69,17 @@ function checkErrors() {
   } else {
     fullName.style.borderColor = "rgb(170, 170, 170)";
     fullName.style.borderWidth = "1px";
+  }
+
+  //EMAIL ERRORS
+  if (!email.value.match(emailPattern)) {
+    errors.push("Invalid or missing email address.");
+    isError = true;
+    email.style.borderColor = "red";
+    email.style.borderWidth = "2px";
+  }else {
+    email.style.borderColor = "rgb(170, 170, 170)";
+    email.style.borderWidth = "1px";
   }
   //PASSWORD ERRORS
   if (password.value.length < 10 || password.value.length > 20) {
@@ -89,9 +131,7 @@ function checkErrors() {
     showErrors();
   } else {
     document.getElementById("formErrors").style.display = "none";
-///ADD USER TO DATABASE
-///GOTO USER'S MAIN MENU
-    window.location.href = 'mainmenu.html';
+    updateProfile();
   }
 }
 
