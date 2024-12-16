@@ -19,7 +19,7 @@ function loadedHandler() {
 //Creates a new user
 function createUser(){
 
-  if ($('#fullname').val() === "") {
+  if ($('#fullName').val() === "") {
     window.alert("invalid name!");
     return;
   }
@@ -32,8 +32,13 @@ function createUser(){
     return;
   }
 
+  let x = $('#fullName').val().toLowerCase();
+  let capName = x.split(' ').map(word =>
+    word.charAt(0).toUpperCase() + word.slice(1)
+  ).join(' ');
+
   let txdata = {
-      name: $('#fullName').val(),
+      name: capName,
       email: $('#email').val().toUpperCase(), 
       password: $('#password').val()
   };
@@ -85,7 +90,7 @@ function isDuplicateEmails(){
       //Add User to Database
       createUser();
       //Goto mainmenu.html
-      window.location.href = 'mainmenu.html';
+      window.location.href = 'login.html';
     }
  })
  .fail(function (data, textStatus, jqXHR) {
