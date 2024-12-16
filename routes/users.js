@@ -55,7 +55,9 @@ router.get('/count', function (req, res) {
 });
 
 router.post("/update", function (req, res) {
-    User.findOneAndUpdate({ email: req.body.email }, req.body, function (err, doc) {
+    const passwordHash = bcrypt.hashSync(req.body.password, 10);
+
+    User.findOneAndUpdate({ email: req.body.email },{name: req.body.name, password: passwordHash}, function (err, doc) {
         if (err) {
             let msgStr = `Something wrong....`;
             res.status(201).json({ message: msgStr, err: err });
@@ -142,6 +144,30 @@ router.post("/logIn", function (req, res) {
         }
     });
     
+ });
+
+ router.get("/status", function (req, res) {
+    // See if the X-Auth header is set
+    if (!req.headers["x-auth"]) {
+        return res.status(401).json({ success: false, msg: "Missing X-Auth header" });
+    }
+    // X-Auth should contain the token 
+    const token = req.headers["x-auth"];
+    try {
+        const decoded = jwt.decode(token, secret);
+        // Send back email and last access
+        User.find({ email: decoded.email }, "name email", function (err, users) {
+            if (err) {
+                res.status(400).json({ success: false, message: "Error contacting DB. Please contact support." });
+            }
+            else {
+                res.status(200).json(users);
+            }
+        });
+    }
+    catch (ex) {
+        res.status(401).json({ success: false, message: "Invalid JWT" });
+    }
  });
 
 
