@@ -95,8 +95,7 @@ label {
 
 input[type="text"], 
 input[type="password"], 
-input[type="email"], 
-input[type="tel"] {
+input[type="email"] {
     padding: 10px;
     font-size: 16px;
     border-radius: 6px;
