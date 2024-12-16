@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/427e2cdf-0d0a-4504-8f5a-c6230f27c323)
+
 
 # ECE413 Web Development and IoT: Heart Rate Monitoring Project 
 ## Project Description
