@@ -1,40 +1,94 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
+<!-- Declares the document type as HTML5 -->
+
 <html lang="en">
+<!-- Sets the language of the document to English -->
+
 <head>
+    <!-- Metadata and linked resources for the document -->
     <meta charset="UTF-8">
+    <!-- Sets character encoding to UTF-8 to support various characters -->
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ensures responsive design for mobile devices -->
+    
     <title>Heart Rate Monitoring</title>
+    <!-- Title of the web page that appears in the browser tab -->
+
     <link href="stylesheets/mainmenu.css" rel="stylesheet">
+    <!-- Links the external CSS file for styling the page -->
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Imports jQuery library for use in the page -->
+
     <script src="javascripts/mainmenu.js"></script>
+    <!-- Links the external JavaScript file for main menu functionality -->
+
     <script src="javascripts/accountInfo.js"></script>
+    <!-- Links the external JavaScript file for account information handling -->
 </head>
 
 <body>
+    <!-- Main content of the webpage -->
+    
     <header>
+        <!-- Header section of the webpage -->
+        
         <h1>Heart Medical Cardiovascular Health Center</h1>
-        <div class="profile-name">Welcome, <span id = "name"></span>!</div>   <!--TODO, GET FROM SIGNUP INFO -->
+        <!-- Main heading of the page displaying the name of the center -->
+        
+        <div class="profile-name">
+            <!-- Profile name section displaying a welcome message with the user's name -->
+            Welcome, <span id="name"></span>!
+            <!-- Span where the user's name will be dynamically inserted -->
+            <!-- TODO: Get user's name from signup information -->
+        </div>   
     </header>
+
     <h2>Main Menu</h2>
+    <!-- Subheading for the main menu section -->
+
     <div class="container">
+        <!-- Main container for the health metrics and account options sections -->
+        
         <div>
+            <!-- Container for Health Metrics section -->
+            
             <div class="section-title">Health Metrics</div>
+            <!-- Title for the Health Metrics section -->
+            
             <div class="card" onclick="navigateTo('weeklySummary')">
+                <!-- Card component that navigates to the Weekly Summary View -->
                 <h3>Weekly Summary View</h3>
+                <!-- Title of the Weekly Summary View card -->
             </div>
+            
             <div class="card" onclick="navigateTo('dailyDetail')">
+                <!-- Card component that navigates to the Detailed Daily View -->
                 <h3>Detailed Daily View</h3>
+                <!-- Title of the Detailed Daily View card -->
             </div>
         </div>
+
         <div>
+            <!-- Container for Account Options section -->
+            
             <div class="section-title">Account Options</div>
+            <!-- Title for the Account Options section -->
+            
             <div class="card" onclick="navigateTo('manageDevices')">
+                <!-- Card component that navigates to the Manage Devices page -->
                 <h3>Add/Remove Devices</h3>
+                <!-- Title of the Add/Remove Devices card -->
             </div>
+            
             <div class="card" onclick="navigateTo('updateAccount')">
+                <!-- Card component that navigates to the Update Account page -->
                 <h3>Update Account</h3>
+                <!-- Title of the Update Account card -->
             </div>
         </div>
     </div>
 </body>
+
 </html>
