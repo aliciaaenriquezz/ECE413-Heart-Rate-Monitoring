@@ -113,7 +113,7 @@ router.post("/read", function (req, res) {
 });
 
 router.post("/logIn", function (req, res) {
-
+    console.log("POST /logIn received");
     if (!req.body.email || !req.body.password) {
         res.status(401).json({ error: "Missing email and/or password" });
         return;
