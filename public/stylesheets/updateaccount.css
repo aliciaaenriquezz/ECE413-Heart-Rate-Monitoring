@@ -1,160 +1,184 @@
+/* Global styling for all elements to reset default spacing */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* Removes margin */
+    padding: 0; /* Removes padding */
+    box-sizing: border-box; /* Ensures padding and border are included in element's width/height */
 }
 
+/* Body styling */
 body {
-    font-family: serif, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Change from center to prevent overlap with the fixed header */
-    min-height: 100vh;
-    padding-top: 100px; /* Add padding to avoid content being hidden under the header */
+    font-family: serif, sans-serif; /* Sets the font family */
+    background-color: #f4f4f9; /* Light background color */
+    color: #333; /* Text color */
+    display: flex; /* Uses flexbox layout */
+    justify-content: center; /* Centers content horizontally */
+    align-items: flex-start; /* Aligns content to the top to prevent overlap with the fixed header */
+    min-height: 100vh; /* Ensures body takes up at least the full height of the viewport */
+    padding-top: 100px; /* Adds space to avoid content hiding under the fixed header */
 }
 
+/* Header styling */
 header {
-    position: fixed; /* Make the header fixed */
-    top: 0; /* Anchor it to the top */
-    width: 100%; /* Make it stretch across the screen */
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 30px;
-    background-color: #7598bd;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1000; /* Ensures the header is always on top */
+    position: fixed; /* Fixes header to the top */
+    top: 0; /* Anchors header to the top */
+    width: 100%; /* Ensures header spans full width of the viewport */
+    display: flex; /* Uses flexbox layout for the header */
+    justify-content: space-between; /* Places items at opposite ends of the header */
+    padding: 20px 30px; /* Padding inside the header */
+    background-color: #7598bd; /* Background color for the header */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds subtle shadow to header */
+    z-index: 1000; /* Ensures header stays on top of other elements */
 }
 
+/* Header text styling */
 header h1 {
-    font-size: 18px; /* Increase the size to make it more prominent */
-    color: #000000; /* White text for better contrast */
-    font-weight: bold; 
+    font-size: 18px; /* Increases the size of the header text */
+    color: #000000; /* Black color for the header text */
+    font-weight: bold; /* Makes header text bold */
 }
 
+/* Profile name styling */
 .profile-name {
-    text-align: left;
-    font-size: 16px;
-    color: #000000; /* Softer color for the welcome message */
+    text-align: left; /* Aligns profile name text to the left */
+    font-size: 16px; /* Sets font size */
+    color: #000000; /* Black color for the profile name */
 }
 
+/* Container styling for content */
 .container {
-    margin-top: 140px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    width: 100%;
-    padding: 70px;
+    margin-top: 140px; /* Adds space at the top to prevent overlap with the fixed header */
+    background-color: #ffffff; /* White background color */
+    border-radius: 8px; /* Rounds the corners of the container */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 500px; /* Limits the container width to 500px */
+    width: 100%; /* Makes container take full width */
+    padding: 70px; /* Adds padding inside the container */
 }
 
+/* Header inside container */
 .header {
-    text-align: center;
-    margin-bottom: 20px;
+    text-align: center; /* Centers the header text */
+    margin-bottom: 20px; /* Adds space below the header */
 }
 
 .header h1 {
-    font-size: 24px;
-    color: #555;
+    font-size: 24px; /* Sets font size for the header */
+    color: #555; /* Sets header color to a soft gray */
 }
 
+/* Styling for daily statistics section */
 .daily-stats {
-    margin-top: 20px;
+    margin-top: 20px; /* Adds space above the daily stats section */
 }
 
+/* Styling for individual day stats */
 .day {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border-radius: 6px;
-    margin-bottom: 10px;
+    display: flex; /* Uses flexbox layout for day elements */
+    justify-content: space-between; /* Distributes the day stats across the container */
+    padding: 10px; /* Adds padding inside each day element */
+    background-color: #f9f9f9; /* Light background color */
+    border-radius: 6px; /* Rounds the corners of each day element */
+    margin-bottom: 10px; /* Adds space below each day element */
 }
 
+/* Alternate background color for even days */
 .day:nth-child(even) {
-    background-color: #e9e9e9;
+    background-color: #e9e9e9; /* Slightly darker background for even days */
 }
 
+/* Styling for day span elements */
 .day span {
-    font-weight: bold;
-    color: #555;
+    font-weight: bold; /* Makes day stats text bold */
+    color: #555; /* Sets text color to a medium gray */
 }
 
-
+/* Form group styling for inputs */
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 15px; /* Adds space below each form group */
 }
 
+/* Label styling for input fields */
 label {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 5px;
-    display: block;
+    font-size: 14px; /* Sets font size for labels */
+    color: #555; /* Sets label text color */
+    margin-bottom: 5px; /* Adds space below the label */
+    display: block; /* Makes label block level */
 }
 
+/* Styling for input fields (text, password, email) */
 input[type="text"], 
 input[type="password"], 
 input[type="email"] {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    width: 100%;
+    padding: 10px; /* Adds padding inside input fields */
+    font-size: 16px; /* Sets font size */
+    border-radius: 6px; /* Rounds the corners of input fields */
+    border: 1px solid #ccc; /* Light border for input fields */
+    width: 100%; /* Ensures input fields take up full width */
 }
 
+/* Styling for readonly input fields */
 input[readonly] {
-    background-color: #e9ecef;
-    color: #6c757d;
+    background-color: #e9ecef; /* Light background for readonly fields */
+    color: #6c757d; /* Sets text color to gray */
 }
 
+/* Button styling */
 button {
-    background-color: #7598bd;
-    color: rgb(0, 0, 0);
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    background-color: #7598bd; /* Blue background color for buttons */
+    color: rgb(0, 0, 0); /* Black text color for buttons */
+    border: none; /* Removes default border */
+    border-radius: 6px; /* Rounds the corners of buttons */
+    font-size: 16px; /* Sets font size */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition for background color on hover */
 }
 
+/* Button styling for update buttons */
 .update {
-    width: 100%;
-    padding: 10px 20px;
+    width: 100%; /* Makes the button take full width */
+    padding: 10px 20px; /* Adds padding inside the button */
 }
+
+/* Hover effect for buttons */
 button:hover {
-    background-color: #597492;
+    background-color: #597492; /* Darker blue on hover */
 }
 
+/* Error message styling */
 .error-message {
-    color: red;
-    font-size: 14px;
-    margin-top: 5px;
+    color: red; /* Red color for error messages */
+    font-size: 14px; /* Font size for error messages */
+    margin-top: 5px; /* Adds space above the error message */
 }
+
+/* Styling for back button */
 .back-button {
-    display: inline-block;
-    margin: 20px;
-    padding: 15px 30px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #000000;
-    background-color: #7598bd; /* Blue color */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-align: center;
+    display: inline-block; /* Makes the button inline */
+    margin: 20px; /* Adds space around the button */
+    padding: 15px 30px; /* Adds padding inside the button */
+    font-size: 16px; /* Font size for the button text */
+    font-weight: bold; /* Makes the text bold */
+    color: #000000; /* Black text color */
+    background-color: #7598bd; /* Blue background for the button */
+    border: none; /* Removes border from the button */
+    border-radius: 5px; /* Rounds the corners of the button */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    transition: all 0.3s ease; /* Smooth transition for button interactions */
+    text-align: center; /* Centers the text inside the button */
 }
 
+/* Hover effect for back button */
 .back-button:hover {
-    transform: translateY(-10px); /* Move up */
-    background-color: #7598bd; /* Darker blue on hover */
+    transform: translateY(-10px); /* Moves button up on hover */
+    background-color: #7598bd; /* Keeps the blue color on hover */
 }
 
+/* Active effect for back button (on click) */
 .back-button:active {
-    transform: translateY(0); /* Return to original position when clicked */
+    transform: translateY(0); /* Resets button position when clicked */
 }
 
+/* Focus effect for back button */
 .back-button:focus {
-    outline: none; /* Remove focus outline */
+    outline: none; /* Removes focus outline */
 }
