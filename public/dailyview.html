@@ -1,32 +1,68 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
+<!-- Declares the document type as HTML5 -->
+
 <html lang="en">
+<!-- Sets the language of the document to English -->
+
 <head>
+    <!-- Metadata and linked resources for the document -->
     <meta charset="UTF-8">
+    <!-- Sets character encoding to UTF-8 to support various characters -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ensures responsive design for mobile devices -->
+    
     <title>Heart Rate Monitoring</title>
+    <!-- Title of the web page that appears in the browser tab -->
+
     <link href="stylesheets/dailyview.css" rel="stylesheet">
+    <!-- Links the external CSS file for styling the page -->
+
     <script src="javascripts/dailyview.js"></script>
+    <!-- Links the JavaScript file to add interactivity and functionality -->
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Loads the jQuery library from a CDN for easier DOM manipulation -->
+
     <script src="javascripts/accountInfo.js"></script>
+    <!-- Links another custom JavaScript file for account-related logic -->
 </head>
 
 <body>
-    <header>
-        <h1>Heart Medical Cardiovascular Health Center</h1>
-        <div class="profile-name"><span id = 'name'></span>'s Daily View!</div>
-    </header>
-    <br>
+    <!-- The main content of the webpage -->
     
+    <header>
+        <!-- Header section for branding and navigation -->
+        <h1>Heart Medical Cardiovascular Health Center</h1>
+        <!-- Main heading of the web page -->
+        
+        <div class="profile-name">
+            <!-- Displays the user's name dynamically -->
+            <span id='name'></span>'s Daily View!
+        </div>
+    </header>
+    
+    <br> 
+    <!-- Line break for spacing -->
+
     <button class="back-button" id="back-button">← Back</button>
+    <!-- Back button to navigate to the previous page -->
 
     <div class="container">
+        <!-- Main container that holds all page content -->
+        
         <div class="header">
+            <!-- Subheader section for the daily view title -->
             <h1>Custom Daily Heart Rate & SpO2 View</h1>
         </div>
     
         <div class="controls">
+            <!-- Section for user controls to customize the view -->
+            
             <label for="day-select">Select a Day:</label>
+            <!-- Label for the day selection dropdown -->
+            
             <select id="day-select">
+                <!-- Dropdown menu for selecting a day of the week -->
                 <option value="Monday">Monday</option>
                 <option value="Tuesday">Tuesday</option>
                 <option value="Wednesday">Wednesday</option>
@@ -35,27 +71,58 @@
                 <option value="Saturday">Saturday</option>
                 <option value="Sunday">Sunday</option>
             </select>
-            <br>
+            
+            <br> 
+            <!-- Line break for spacing -->
+            
             <label for="start-time">Start Time:</label>
+            <!-- Label for the start time input -->
+            
             <input type="time" id="start-time" value="08:00">
+            <!-- Input field for selecting the start time, defaulting to 8:00 AM -->
+
             <label for="end-time">End Time:</label>
+            <!-- Label for the end time input -->
+            
             <input type="time" id="end-time" value="18:00">
-            <br>
+            <!-- Input field for selecting the end time, defaulting to 6:00 PM -->
+
+            <br> 
+            <!-- Line break for spacing -->
+            
             <label for="frequency">Measurement Frequency (minutes):</label>
+            <!-- Label for the frequency input -->
+            
             <input type="number" id="frequency" min="1" value="30">
-            <br>
+            <!-- Input field for the frequency of measurements (in minutes), defaulting to 30 -->
+
+            <br> 
+            <!-- Line break for spacing -->
+            
             <button id="update-button">Update View</button>
+            <!-- Button to update the heart rate and SpO2 view based on user input -->
         </div>
     
         <div class="chart-container">
+            <!-- Section for displaying the heart rate chart -->
+            
             <h3>Heart Rate (BPM)</h3>
+            <!-- Subheading for the heart rate chart -->
+            
             <canvas id="heartRateChart"></canvas>
+            <!-- Canvas element where the heart rate chart will be drawn -->
         </div>
     
         <div class="chart-container">
+            <!-- Section for displaying the SpO2 chart -->
+            
             <h3>Blood Oxygen Saturation (SpO2 %)</h3>
+            <!-- Subheading for the SpO2 chart -->
+            
             <canvas id="spo2Chart"></canvas>
+            <!-- Canvas element where the SpO2 chart will be drawn -->
         </div>
     </div>
 </body>
+
 </html>
