@@ -20,6 +20,10 @@ unsigned long measurementInterval = 30 * 60 * 1000; // Default: 30 minutes
 unsigned long startFlashTime = 0;
 unsigned long flashDuration = 300000; // 5 minutes in milliseconds
 
+unsigned long last30MinFlashTime = 0; // Timer for 30-minute LED flash
+const unsigned long thirtyMinInterval = 30 * 60 * 1000; // 30 minutes
+bool flashingFor30Min = false; // Flag to track flashing state for 30-minute interval
+
 bool measurementInProgress = false;
 bool initialMeasurement = true;
 
@@ -57,13 +61,49 @@ void loop()
   unsigned long currentMillis = millis();
   uint32_t irValue = particleSensor.getIR(); // Read IR value for finger detection
 
+  // Handle 30-minute periodic LED flashing
+  if (!flashingFor30Min && currentMillis - last30MinFlashTime >= thirtyMinInterval)
+  {
+    Serial.println("30-minute interval reached. Starting LED flash...");
+    flashingFor30Min = true;
+    last30MinFlashTime = currentMillis;
+    startFlashTime = currentMillis; // Mark the start of flashing
+  }
+
+  // Flash LED continuously until finger is detected
+  if (flashingFor30Min)
+  {
+    flashBlueLED();
+
+    if (irValue > fingerDetectionThreshold) // Finger detected
+    {
+      Serial.println("Finger detected during 30-minute flash. Taking measurement...");
+      flashingFor30Min = false; // Stop the LED flashing
+      digitalWrite(blueLed, LOW); // Turn off LED
+
+      if (takeMeasurement())
+      {
+        stopMeasurementRequest();
+        return;
+      }
+    }
+
+    //Stop flashing after a prolonged time (e.g., 5 minutes)
+    if (currentMillis - startFlashTime >= flashDuration)
+    {
+      Serial.println("Timeout: Stopping LED flash after prolonged period.");
+      flashingFor30Min = false;
+      digitalWrite(blueLed, LOW);
+    }
+  }
+
   // Finger detected at any time: take immediate measurement
   if (irValue > fingerDetectionThreshold && !measurementInProgress)
   {
     Serial.println("Finger detected. Taking measurement...");
     if (takeMeasurement())
     {
-      stopMeasurementRequest(); // Stop LED if active
+      stopMeasurementRequest();
       return;
     }
   }
