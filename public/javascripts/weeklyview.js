@@ -1,8 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Get the back button element by its ID
     const backButton = document.getElementById('back-button');
 
-    // Add click event listener to navigate to mainmenu.html
+    // Add a click event listener to the back button
     backButton.addEventListener('click', () => {
-        window.location.href = 'mainmenu.html'; // Redirect to main menu
+        // Redirect to the main menu page when the back button is clicked
+        window.location.href = 'mainmenu.html';
     });
 });
