@@ -1,45 +1,95 @@
 <!DOCTYPE html>
+<!-- Declares the document type as HTML5 -->
+
 <html lang="en">
+<!-- Sets the language of the document to English -->
+
 <head>
+    <!-- Metadata and linked resources for the document -->
+    
     <meta charset="UTF-8">
+    <!-- Sets character encoding to UTF-8 to support various characters -->
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ensures responsive design for mobile devices -->
+    
     <title>Heart Rate Monitoring</title>
+    <!-- Title of the web page that appears in the browser tab -->
+
     <link href="stylesheets/weeklyview.css" rel="stylesheet">
+    <!-- Links the external CSS file for styling the weekly heart rate view page -->
+
     <script src="javascripts/weeklyview.js"></script>
+    <!-- Links the external JavaScript file for the weekly heart rate view functionality -->
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Imports jQuery library for use in the page -->
+
     <script src="javascripts/accountInfo.js"></script>
+    <!-- Links the external JavaScript file for handling account information -->
 </head>
 
 <body>
+    <!-- Main content of the webpage -->
+    
     <header>
+        <!-- Header section of the webpage -->
+        
         <h1>Heart Medical Cardiovascular Health Center</h1>
-        <div class="profile-name">Welcome, <span id = 'name'></span>!</div>   <!--TODO, GET FROM SIGNUP INFO -->
+        <!-- Main heading of the page displaying the name of the center -->
+        
+        <div class="profile-name">
+            <!-- Profile name section displaying a welcome message with the user's name -->
+            Welcome, <span id='name'></span>!
+            <!-- Span where the user's name will be dynamically inserted -->
+            <!-- TODO: Get user's name from signup information -->
+        </div>   
     </header>
 
     <button class="back-button" id="back-button">← Back</button>
+    <!-- Back button to navigate back to the previous page -->
     
     <div class="container">
+        <!-- Main container for the header, summary, and daily stats -->
+        
         <div class="header">
+            <!-- Header section for the Weekly Heart Rate Summary -->
             <h1>Weekly Heart Rate Summary</h1>
+            <!-- Heading for the weekly heart rate summary -->
         </div>
+        
         <div class="summary">
+            <!-- Summary section displaying average, min, and max heart rate stats -->
+            
             <div class="summary-item">
+                <!-- Individual item for the average heart rate -->
                 <h2 id="average-rate">--</h2>
+                <!-- Placeholder for the average heart rate value -->
                 <p>Average Rate</p>
+                <!-- Description label for the average heart rate -->
             </div>
+            
             <div class="summary-item">
+                <!-- Individual item for the minimum heart rate -->
                 <h2 id="min-rate">--</h2>
+                <!-- Placeholder for the minimum heart rate value -->
                 <p>Min Rate</p>
+                <!-- Description label for the minimum heart rate -->
             </div>
+            
             <div class="summary-item">
+                <!-- Individual item for the maximum heart rate -->
                 <h2 id="max-rate">--</h2>
+                <!-- Placeholder for the maximum heart rate value -->
                 <p>Max Rate</p>
+                <!-- Description label for the maximum heart rate -->
             </div>
         </div>
-    
+
         <div class="daily-stats" id="daily-stats">
-            <!-- Heart rate for each day will be displayed here -->
+            <!-- Container where heart rate data for each day will be dynamically displayed -->
         </div>
     </div>
 </body>
+
 </html>
