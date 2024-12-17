@@ -1,108 +1,126 @@
+/* Reset default margins and padding for all elements */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body styles for overall page layout */
 body {
-    font-family: serif, sans-serif;
-    background-color: #884444;
-    padding: 20px;
+    font-family: serif, sans-serif; /* Font family for body */
+    background-color: #884444; /* Dark reddish background color */
+    padding: 20px; /* Padding around the body */
 }
 
+/* Container for the main content, set as a flexbox */
 .container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stack items vertically */
     gap: 20px; /* Space between top and bottom sections */
 }
 
+/* Top section with space between elements */
 .top-section {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Space between columns */
 }
 
+/* Styling for each column in the top section */
 .column {
-    background-color: #ffdbdb;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    width: 30%; /* 3 columns of equal width */
-    text-align: center;
-    padding: 20px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #ffdbdb; /* Light pink background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Light shadow for depth */
+    width: 30%; /* Each column takes up 30% of the width */
+    text-align: center; /* Center-align text inside the column */
+    padding: 20px; /* Padding inside the column */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for hover effects */
 }
 
+/* Styling for images inside the column */
 .column img {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    object-fit: cover; /* Ensures the image fits inside the container */
-    margin-bottom: 10px;
+    width: 300px; /* Fixed width for images */
+    height: 300px; /* Fixed height for images */
+    border-radius: 50%; /* Circular images */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+    margin-bottom: 10px; /* Space below the image */
 }
 
+/* Styling for the column titles */
 .column h3 {
-    font-size: 1.6em;
-    color: #333;
-    margin-bottom: 10px;
+    font-size: 1.6em; /* Increase the font size */
+    color: #333; /* Dark text color */
+    margin-bottom: 10px; /* Space below the title */
 }
 
+/* Bottom section with similar styling to the columns */
 .bottom-section {
-    background-color: #ffdbdb;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #ffdbdb; /* Light pink background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Light shadow for depth */
+    padding: 20px; /* Padding inside the section */
+    text-align: center; /* Center-align text */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for hover effects */
 }
 
+/* Styling for paragraphs inside the bottom section */
 .bottom-section p {
-    font-size: 1em;
-    color: #555;
-    line-height: 1.6;
+    font-size: 1em; /* Font size for the paragraph */
+    color: #555; /* Softer text color */
+    line-height: 1.6; /* Adjust line height for readability */
 }
 
+/* Media query for smaller screens */
 @media (max-width: 768px) {
     .top-section {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Stack columns vertically on smaller screens */
+        align-items: center; /* Center-align the columns */
     }
 
+    /* Adjust column width on smaller screens */
     .column {
-        width: 90%; /* Full width for smaller screens */
-        margin-bottom: 20px;
+        width: 90%; /* Full width for each column */
+        margin-bottom: 20px; /* Space between columns */
     }
 }
 
+/* Hover effect for columns */
 .column:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px); /* Move up slightly on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Darker shadow on hover */
 }
 
+/* Hover effect for the bottom section */
 .bottom-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px); /* Move up slightly on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Darker shadow on hover */
 }
+
+/* Styling for the video section */
 .video-section {
     display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    background-color: #ffdbdb;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    justify-content: space-between; /* Space between video columns */
+    margin-top: 20px; /* Space from previous section */
+    background-color: #ffdbdb; /* Light pink background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Light shadow for depth */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for hover effects */
 }
 
+/* Styling for each video column */
 .video-column {
-    width: 48%;
-    margin-bottom: 20px;
-    padding: 20px;
+    width: 48%; /* Each video column takes up 48% of the width */
+    margin-bottom: 20px; /* Space below the video columns */
+    padding: 20px; /* Padding inside each video column */
 }
 
+/* Video styling */
 video {
-    width: 100%;
-    height: auto;
+    width: 100%; /* Full width for video */
+    height: auto; /* Maintain aspect ratio of the video */
 }
 
+/* Hover effect for the video section */
 .video-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px); /* Move up slightly on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Darker shadow on hover */
 }
