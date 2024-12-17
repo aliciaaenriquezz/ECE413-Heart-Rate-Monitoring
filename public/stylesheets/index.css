@@ -81,3 +81,28 @@ body {
     transform: translateY(-5px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+.video-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    background-color: #ffdbdb;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.video-column {
+    width: 48%;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+video {
+    width: 100%;
+    height: auto;
+}
+
+.video-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
