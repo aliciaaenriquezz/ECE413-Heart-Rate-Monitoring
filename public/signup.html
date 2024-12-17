@@ -1,37 +1,82 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
+<!-- Declares the document type as HTML5 -->
+
 <html lang="en">
+<!-- Sets the language of the document to English -->
+
 <head>
+    <!-- Metadata and linked resources for the document -->
     <meta charset="UTF-8">
+    <!-- Sets character encoding to UTF-8 to support various characters -->
+    
     <meta name="viewport" content="width=device-width">
+    <!-- Ensures responsive design for mobile devices -->
+    
     <title>Heart Rate Monitoring</title>
+    <!-- Title of the web page that appears in the browser tab -->
+
     <link href="stylesheets/signup.css" rel="stylesheet">
+    <!-- Links the external CSS file for styling the sign-up page -->
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Imports jQuery library for use in the page -->
+
     <script src="javascripts/signup.js"></script>
+    <!-- Links the external JavaScript file for sign-up form functionality -->
 </head>
+
 <body>
+    <!-- Main content of the webpage -->
+    
     <div class="main-container">
+        <!-- Main container for the entire page content -->
+        
         <div id="image-box"> 
+            <!-- Container for the sign-up page image -->
             <img src="images/loginimage.jpeg" alt="Login Image">
+            <!-- Image for the sign-up page with alt text for accessibility -->
         </div>
-        <h1 id = center-name>Heart Medical <br>Cardiovascular Health Center</h1>
+
+        <h1 id="center-name">Heart Medical <br>Cardiovascular Health Center</h1>
+        <!-- Heading for the Heart Medical Cardiovascular Health Center, with a line break for better layout -->
+
         <h1>Patient Portal Sign Up</h1>
-
+        <!-- Heading for the patient portal sign-up section -->
+        
         <div class="login-container">
-                <label for="fullName">Full Name</label>
-                <input type="text" id="fullName"></input>
+            <!-- Container for the sign-up form elements -->
 
-                <label for="email">Email</label>
-                <input type="text" id="email"></input>
-
-                <label for="password">Password:</label>
-                <input type="password" id="password"></input>
-
-                <label for="passwordConfirm">Confirm Password</label>
-                <input type="password" id="passwordConfirm"></input>
-                <div id="formErrors"></div>
-                
-                <input id="submit" type="submit"></input>
+            <label for="fullName">Full Name</label>
+            <!-- Label for the full name input field -->
+            
+            <input type="text" id="fullName">
+            <!-- Input field for the user's full name -->
+            
+            <label for="email">Email</label>
+            <!-- Label for the email input field -->
+            
+            <input type="text" id="email">
+            <!-- Input field for the user's email address -->
+            
+            <label for="password">Password:</label>
+            <!-- Label for the password input field -->
+            
+            <input type="password" id="password">
+            <!-- Input field for the user's password with type "password" to hide input text -->
+            
+            <label for="passwordConfirm">Confirm Password</label>
+            <!-- Label for the password confirmation input field -->
+            
+            <input type="password" id="passwordConfirm">
+            <!-- Input field for the user to confirm their password -->
+            
+            <div id="formErrors"></div>
+            <!-- Div where form error messages will be displayed -->
+            
+            <input id="submit" type="submit">
+            <!-- Submit button for the sign-up form -->
         </div>
     </div>
 </body>
+
 </html>
