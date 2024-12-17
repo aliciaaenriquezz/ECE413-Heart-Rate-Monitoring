@@ -1,131 +1,151 @@
+/* Global reset for all elements */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    box-sizing: border-box; /* Ensures padding and border are included in the element's width and height */
 }
 
+/* Body styling */
 body {
-    font-family: serif, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: flex-start; /* Change from center to prevent overlap with the fixed header */
-    min-height: 100vh;
-    padding-top: 100px; /* Add padding to avoid content being hidden under the header */
+    font-family: serif, sans-serif; /* Sets the font family */
+    background-color: #f4f4f9; /* Light background color */
+    color: #333; /* Text color */
+    display: flex; /* Uses flexbox layout */
+    text-align: center; /* Centers text horizontally */
+    justify-content: center; /* Centers content horizontally */
+    align-items: flex-start; /* Aligns content to the top to prevent overlap with the fixed header */
+    min-height: 100vh; /* Ensures body takes up at least the full height of the viewport */
+    padding-top: 100px; /* Adds space at the top to prevent content hiding under the fixed header */
 }
 
+/* Header styling */
 header {
-    position: fixed; /* Make the header fixed */
-    top: 0; /* Anchor it to the top */
-    width: 100%; /* Make it stretch across the screen */
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 30px;
-    background-color: #7598bd;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1000; /* Ensures the header is always on top */
+    position: fixed; /* Fixes the header to the top of the page */
+    top: 0; /* Anchors it to the top of the viewport */
+    width: 100%; /* Makes the header stretch across the screen */
+    display: flex; /* Uses flexbox layout */
+    justify-content: space-between; /* Positions header content at opposite ends */
+    padding: 20px 30px; /* Adds padding inside the header */
+    background-color: #7598bd; /* Background color for the header */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds subtle shadow for depth */
+    z-index: 1000; /* Ensures the header is always on top of other content */
 }
 
+/* Header title styling */
 header h1 {
-    font-size: 18px; /* Increase the size to make it more prominent */
-    color: #000000; /* White text for better contrast */
-    font-weight: bold; 
+    font-size: 18px; /* Increases the font size of the header */
+    color: #000000; /* Black color for text */
+    font-weight: bold; /* Makes header text bold */
 }
 
+/* Profile name styling */
 .profile-name {
-    text-align: left;
-    font-size: 16px;
-    color: #000000; /* Softer color for the welcome message */
+    text-align: left; /* Aligns profile name text to the left */
+    font-size: 16px; /* Sets font size */
+    color: #000000; /* Black color for profile name */
 }
 
+/* Main container styling */
 .container {
-    margin-top: 140px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    width: 100%;
-    padding: 70px;
+    margin-top: 140px; /* Adds space at the top to avoid overlap with the fixed header */
+    background-color: #ffffff; /* White background for the container */
+    border-radius: 8px; /* Rounds the corners of the container */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds subtle shadow around the container */
+    max-width: 500px; /* Limits the container's maximum width */
+    width: 100%; /* Makes the container take up full width */
+    padding: 70px; /* Adds padding inside the container */
 }
 
+/* Header inside the container */
 .header {
-    text-align: center;
-    margin-bottom: 20px;
+    text-align: center; /* Centers text inside the header */
+    margin-bottom: 20px; /* Adds space below the header */
 }
 
+/* Styling for the header inside the container */
 .header h1 {
-    font-size: 24px;
-    color: #555;
+    font-size: 24px; /* Sets font size */
+    color: #555; /* Gray color for text */
 }
 
+/* Styling for the summary section */
 .summary {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    display: flex; /* Uses flexbox layout */
+    justify-content: space-between; /* Distributes items across the container */
+    margin-bottom: 20px; /* Adds space below the summary section */
 }
 
+/* Styling for individual summary items */
 .summary-item {
-    text-align: center;
+    text-align: center; /* Centers content within each summary item */
 }
 
+/* Header styling inside summary item */
 .summary-item h2 {
-    font-size: 32px;
-    color: #333;
+    font-size: 32px; /* Larger font size for summary item headers */
+    color: #333; /* Dark gray color for summary item headers */
 }
 
+/* Paragraph styling inside summary item */
 .summary-item p {
-    font-size: 14px;
-    color: #777;
+    font-size: 14px; /* Smaller font size for paragraphs */
+    color: #777; /* Light gray color for paragraph text */
 }
 
+/* Daily statistics section styling */
 .daily-stats {
-    margin-top: 20px;
+    margin-top: 20px; /* Adds space above the daily stats section */
 }
 
+/* Styling for individual day statistics */
 .day {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border-radius: 6px;
-    margin-bottom: 10px;
+    display: flex; /* Uses flexbox layout for day items */
+    justify-content: space-between; /* Distributes content across the container */
+    padding: 10px; /* Adds padding inside each day item */
+    background-color: #f9f9f9; /* Light background color for each day item */
+    border-radius: 6px; /* Rounds the corners of each day item */
+    margin-bottom: 10px; /* Adds space below each day item */
 }
 
+/* Styling for even-numbered days to alternate background color */
 .day:nth-child(even) {
-    background-color: #e9e9e9;
+    background-color: #e9e9e9; /* Darker background color for even-numbered days */
 }
 
+/* Styling for text within day items */
 .day span {
-    font-weight: bold;
-    color: #555;
+    font-weight: bold; /* Makes text bold */
+    color: #555; /* Dark gray color for text */
 }
+
+/* Back button styling */
 .back-button {
-    display: inline-block;
-    margin: 20px;
-    padding: 15px 30px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #000000;
-    background-color: #7598bd; /* Blue color */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-align: center;
+    display: inline-block; /* Makes the button inline */
+    margin: 20px; /* Adds margin around the button */
+    padding: 15px 30px; /* Adds padding inside the button */
+    font-size: 16px; /* Font size for the button text */
+    font-weight: bold; /* Makes button text bold */
+    color: #000000; /* Black text color */
+    background-color: #7598bd; /* Blue background color */
+    border: none; /* Removes the border */
+    border-radius: 5px; /* Rounds the corners of the button */
+    cursor: pointer; /* Changes the cursor to pointer on hover */
+    transition: all 0.3s ease; /* Smooth transition for interaction effects */
+    text-align: center; /* Centers the button text */
 }
 
+/* Hover effect for back button */
 .back-button:hover {
-    transform: translateY(-10px); /* Move up */
-    background-color: #7598bd; /* Darker blue on hover */
+    transform: translateY(-10px); /* Moves the button up slightly on hover */
+    background-color: #7598bd; /* Keeps the background color on hover */
 }
 
+/* Active effect for back button when clicked */
 .back-button:active {
-    transform: translateY(0); /* Return to original position when clicked */
+    transform: translateY(0); /* Resets button position when clicked */
 }
 
+/* Focus effect for back button */
 .back-button:focus {
-    outline: none; /* Remove focus outline */
+    outline: none; /* Removes the focus outline */
 }
-
