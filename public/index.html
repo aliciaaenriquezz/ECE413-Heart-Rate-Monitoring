@@ -1,62 +1,147 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heart Rate Monitoring</title>
-    <link href="stylesheets/index.css" rel="stylesheet">
-</head>
-<body>
-    <div class="container">
+<!DOCTYPE html> 
+<!-- Declares the document type as HTML5 -->
 
-        <!-- Top Section: Three Columns -->
+<html lang="en">
+<!-- Sets the language of the document to English -->
+
+<head>
+    <!-- Metadata and linked resources for the document -->
+    <meta charset="UTF-8">
+    <!-- Sets character encoding to UTF-8 to support various characters -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ensures responsive design for mobile devices -->
+    
+    <title>Heart Rate Monitoring</title>
+    <!-- Title of the web page that appears in the browser tab -->
+
+    <link href="stylesheets/index.css" rel="stylesheet">
+    <!-- Links the external CSS file for styling the page -->
+</head>
+
+<body>
+    <!-- Main content of the webpage -->
+    
+    <div class="container">
+        <!-- Main container for the entire page content -->
+        
+        <!-- Top Section: Contains three columns with team member details -->
         <div class="top-section">
             <div class="column">
+                <!-- Column for team member 1 -->
                 <img src="images/photo.PNG" alt="Maria Arvizu Velazquez">
+                <!-- Image of the team member with alt text for accessibility -->
+                
                 <h3>Maria Arvizu Velazquez</h3>
+                <!-- Team member's name -->
+                
                 <p>Electrical & Computer Engineering</p>
+                <!-- Team member's department or major -->
+                
                 <p>arvizuvelazquez@arizona.edu</p>
+                <!-- Team member's email -->
             </div>
+            
             <div class="column">
+                <!-- Column for team member 2 -->
                 <img src="images/img_7031sq.jpeg" alt="Alicia Enriquez">
+                <!-- Image of the team member with alt text for accessibility -->
+                
                 <h3>Alicia Enriquez</h3>
+                <!-- Team member's name -->
+                
                 <p>Electrical & Computer Engineering</p>
+                <!-- Team member's department or major -->
+                
                 <p>aenriquez45@arizona.edu</p>
+                <!-- Team member's email -->
             </div>
+            
             <div class="column">
+                <!-- Column for team member 3 -->
                 <img src="images/EmilFischer_Picture.png" alt="Aiden Fischer">
+                <!-- Image of the team member with alt text for accessibility -->
+                
                 <h3>Emil Aiden Fischer</h3>
+                <!-- Team member's name -->
+                
                 <p>Electrical & Computer Engineering</p>
+                <!-- Team member's department or major -->
+                
                 <p>aidenfischer@arizona.edu</p>
+                <!-- Team member's email -->
             </div>
         </div>
     
-        <!-- Bottom Section: Full-Width Column -->
+        <!-- Bottom Section: Contains the project description and useful links -->
         <div class="bottom-section">
-            <h2>ECE413 Web Development and IoT: Heart Rate Monitoring Project Description</h2><br>
-            <p>We were tasked with creating a heart rate monitoring IoT web application. Our heart rate and blood oxygen saturation level readings have been obtained using a MAX30102 Pulse Detection Blood Oxygen module.
+            <h2>ECE413 Web Development and IoT: Heart Rate Monitoring Project Description</h2>
+            <!-- Title of the project description -->
+            
+            <br> 
+            <!-- Line break for spacing -->
+            
+            <p>
+                <!-- Paragraph containing the project description -->
+                We were tasked with creating a heart rate monitoring IoT web application. Our heart rate and blood oxygen saturation level readings have been obtained using a MAX30102 Pulse Detection Blood Oxygen module.
                 Using this module along with a Particle Argon IoT development board, a user is able to obtain their health metrics through an account. This account can be updated as well. This is a low-cost alternative 
-                for other various cardiovascular health monitoring equipment. This application can be accessed at: <a href="http://ec2-18-220-166-219.us-east-2.compute.amazonaws.com:3000/">ECE413 Project Site</a>. on desktop and mobile devices.
-                Our project files can be accessed here: <a href="https://github.com/aliciaaenriquezz/ECE413-Heart-Rate-Monitoring">ECE413 Project GitHub</a>. More
-                details are provided in our README.md file on our GitHub. Below are links for our apps login and signup page. 
+                for other various cardiovascular health monitoring equipment. This application can be accessed at: 
+                <a href="http://ec2-18-220-166-219.us-east-2.compute.amazonaws.com:3000/">ECE413 Project Site</a> 
+                <!-- Link to the live ECE413 project site -->
+                on desktop and mobile devices. Our project files can be accessed here: 
+                <a href="https://github.com/aliciaaenriquezz/ECE413-Heart-Rate-Monitoring">ECE413 Project GitHub</a>. 
+                <!-- Link to the project's GitHub repository -->
+                More details are provided in our README.md file on our GitHub. Below are links for our app's login and signup pages. 
             </p>
-            <br><a class = "link" href = "login.html">Login Page</a><br>
-            <a class = "link" href = "signup.html">Sign Up Page</a>
+            
+            <br> 
+            <!-- Line break for spacing -->
+            
+            <a class="link" href="login.html">Login Page</a>
+            <!-- Link to the login page -->
+            
+            <br> 
+            <!-- Line break for spacing -->
+            
+            <a class="link" href="signup.html">Sign Up Page</a>
+            <!-- Link to the sign-up page -->
         </div>
 
-	<div class="video-section">
+        <!-- Video Section: Contains the pitch video and a second embedded video -->
+        <div class="video-section">
             <div class="video-column">
-                <h1>Pitch Video</h1><br>
+                <!-- Column for the pitch video -->
+                <h1>Pitch Video</h1>
+                <!-- Title for the pitch video section -->
+                
+                <br> 
+                <!-- Line break for spacing -->
+                
                 <div class="video-column">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/tB_ptHuWO3k?si=FDOIu8KsIcu8buI0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <!-- Embeds the YouTube video -->
+                    <iframe 
+                        width="560" 
+                        height="315" 
+                        src="https://www.youtube.com/embed/tB_ptHuWO3k?si=FDOIu8KsIcu8buI0" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
                 </div>
             </div>
+            
             <div class="video-column">
+                <!-- Column for a local embedded video -->
                 <video width="100%" controls>
+                    <!-- Video player with width set to 100% and player controls enabled -->
                     <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+                    <!-- Source of the video file -->
                 </video>
             </div>
         </div>
     </div>
 </body>
+
 </html>
