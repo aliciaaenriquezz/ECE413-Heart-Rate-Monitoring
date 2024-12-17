@@ -1,31 +1,70 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
+<!-- Declares the document type as HTML5 -->
+
 <html lang="en">
+<!-- Sets the language of the document to English -->
+
 <head>
+    <!-- Metadata and linked resources for the document -->
     <meta charset="UTF-8">
+    <!-- Sets character encoding to UTF-8 to support various characters -->
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ensures responsive design for mobile devices -->
+    
     <title>Heart Rate Monitoring - Log In</title>
+    <!-- Title of the web page that appears in the browser tab -->
+
     <link href="stylesheets/login.css" rel="stylesheet">
+    <!-- Links the external CSS file for styling the page -->
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Imports jQuery library for use in the page -->
+
     <script src="javascripts/login.js"></script>
+    <!-- Links the external JavaScript file for page functionality -->
 </head>
+
 <body>
+    <!-- Main content of the webpage -->
+    
     <div class="main-container">
+        <!-- Main container for the entire page content -->
+        
         <div id="image-box"> 
+            <!-- Container for the login image -->
             <img src="images/loginimage.jpeg" alt="Login Image">
+            <!-- Image for the login page with alt text for accessibility -->
         </div>
-        <h1 id = center-name>Heart Medical <br>Cardiovascular Health Center</h1>
+
+        <h1 id="center-name">Heart Medical <br>Cardiovascular Health Center</h1>
+        <!-- Heading for the Heart Medical Cardiovascular Health Center, with a line break for better layout -->
+
         <h1>Patient Portal</h1>
-
+        <!-- Heading for the patient portal section -->
+        
         <div class="login-container">
-                <label for="email">email:</label>
-                <input type="text" id="email">
+            <!-- Container for the login form elements -->
 
-                <label for="password">Password:</label>
-                <input type="password" id="password">
+            <label for="email">Email:</label>
+            <!-- Label for the email input field -->
+            
+            <input type="text" id="email">
+            <!-- Input field for the user's email address -->
 
-                <input type="submit" id="submit"></input>
-                <p>No account? <a href="signup.html">sign up</a></p>
+            <label for="password">Password:</label>
+            <!-- Label for the password input field -->
+            
+            <input type="password" id="password">
+            <!-- Input field for the user's password with type "password" to hide input text -->
+
+            <input type="submit" id="submit">
+            <!-- Submit button for the login form -->
+            
+            <p>No account? <a href="signup.html">Sign up</a></p>
+            <!-- Text prompting the user to sign up if they don't have an account, with a link to the signup page -->
         </div>
     </div>
 </body>
+
 </html>
