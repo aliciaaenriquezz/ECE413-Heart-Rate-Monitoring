@@ -1,54 +1,113 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
+<!-- Declares the document type as HTML5 -->
+
 <html lang="en">
+<!-- Sets the language of the document to English -->
+
 <head>
+    <!-- Metadata and linked resources for the document -->
     <meta charset="UTF-8">
+    <!-- Sets character encoding to UTF-8 to support various characters -->
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ensures responsive design for mobile devices -->
+    
     <title>Heart Rate Monitoring</title>
+    <!-- Title of the web page that appears in the browser tab -->
+
     <link href="stylesheets/updateaccount.css" rel="stylesheet">
+    <!-- Links the external CSS file for styling the update account page -->
+
     <script src="javascripts/updateaccount.js"></script>
+    <!-- Links the external JavaScript file for the update account functionality -->
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Imports jQuery library for use in the page -->
+
     <script src="javascripts/accountInfo.js"></script>
+    <!-- Links the external JavaScript file for handling account information -->
 </head>
 
 <body>
+    <!-- Main content of the webpage -->
+    
     <header>
-        <h1>Heart Medical Cardiovascular Health Center</h1>
-        <div class="profile-name">Welcome, <span id = 'name'></span>!</div>   <!--TODO, GET FROM SIGNUP INFO -->
-    </header>
+        <!-- Header section of the webpage -->
         
+        <h1>Heart Medical Cardiovascular Health Center</h1>
+        <!-- Main heading of the page displaying the name of the center -->
+        
+        <div class="profile-name">
+            <!-- Profile name section displaying a welcome message with the user's name -->
+            Welcome, <span id='name'></span>!
+            <!-- Span where the user's name will be dynamically inserted -->
+            <!-- TODO: Get user's name from signup information -->
+        </div>   
+    </header>
+    
     <button class="back-button" id="back-button">← Back</button>
-
+    <!-- Back button to navigate back to the previous page -->
+    
     <div class="container">
+        <!-- Main container for the form and header content -->
+        
         <div class="header">
+            <!-- Header section for the Update Account Information form -->
             <h1>Update Account Information</h1>
+            <!-- Heading for the update account form -->
         </div>
             
-            <!-- Username Field -->
-            <div class="form-group">
-                <label for="fullName">Username</label>
-                <input type="text" id="fullName" value= "">
-            </div>
-
-            <!-- Email (read-only) Field -->
-            <div class="form-group">
-                <label for="email">Email (cannot be changed)</label>
-                <input type="email" id="email" value="" readonly>
-            </div>
-    
-            <!-- Password Field -->
-            <div class="form-group">
-                <label for="password">New Password</label>
-                <input type="password" id="password" placeholder="Enter new password" required>
-            </div>
-    
-            <!-- Confirm Password Field -->
-            <div class="form-group">
-                <label for="passwordConfirm">Confirm New Password</label>
-                <input type="password" id="passwordConfirm" placeholder="Confirm new password" required>
-            </div>
-            <div id="formErrors"></div>
-            <!-- Submit Button -->
-            <input type="submit" id = "submit" value = "Update Information">
+        <!-- Username Field -->
+        <div class="form-group">
+            <!-- Form group for the username field -->
+            
+            <label for="fullName">Username</label>
+            <!-- Label for the username input field -->
+            
+            <input type="text" id="fullName" value="">
+            <!-- Input field for the user's username, initially empty -->
         </div>
+
+        <!-- Email (read-only) Field -->
+        <div class="form-group">
+            <!-- Form group for the email field -->
+            
+            <label for="email">Email (cannot be changed)</label>
+            <!-- Label for the email input field with a note that it cannot be changed -->
+            
+            <input type="email" id="email" value="" readonly>
+            <!-- Input field for the user's email address (read-only to prevent editing) -->
+        </div>
+
+        <!-- Password Field -->
+        <div class="form-group">
+            <!-- Form group for the password field -->
+            
+            <label for="password">New Password</label>
+            <!-- Label for the new password input field -->
+            
+            <input type="password" id="password" placeholder="Enter new password" required>
+            <!-- Input field for entering the new password, required field -->
+        </div>
+
+        <!-- Confirm Password Field -->
+        <div class="form-group">
+            <!-- Form group for the confirm password field -->
+            
+            <label for="passwordConfirm">Confirm New Password</label>
+            <!-- Label for the confirm password input field -->
+            
+            <input type="password" id="passwordConfirm" placeholder="Confirm new password" required>
+            <!-- Input field for confirming the new password, required field -->
+        </div>
+
+        <div id="formErrors"></div>
+        <!-- Div where form error messages will be displayed -->
+        
+        <!-- Submit Button -->
+        <input type="submit" id="submit" value="Update Information">
+        <!-- Submit button to update account information -->
+    </div>
 </body>
+
 </html>
